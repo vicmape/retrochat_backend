@@ -19,6 +19,12 @@ app.use(express.json());
 app.use(cors());
 
 // Routes
+app.use('/hello', (req,res) => {
+    res.status(201).send({
+        status: "success", 
+        message: `Hello World!`
+    });
+});
 app.use('/register', require('./routes/register'));
 app.use('/login', require('./routes/login'));
 app.use('/auth', require('./routes/auth'));
