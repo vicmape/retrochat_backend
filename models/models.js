@@ -3,9 +3,8 @@ require('dotenv').config()
 const mongoose = require('mongoose');
 
 module.exports = async () => {
-    let mongoDB = `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`;
 
-    mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
+    mongoose.connect(`mongodb+srv://retrochat:${process.env.DB_PASS}@cluster0.txw8w.mongodb.net/?retryWrites=true&w=majority`);
     
     const usersSchema = new mongoose.Schema({
         userName: String,
