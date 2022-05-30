@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 module.exports = async () => {
 
-    mongoose.connect(`mongodb+srv://retrochat:${process.env.DB_PASS}@cluster0.txw8w.mongodb.net/?retryWrites=true&w=majority`);
+    mongoose.connect(process.env.MONGODB_URI);
     
     const usersSchema = new mongoose.Schema({
         userName: String,
