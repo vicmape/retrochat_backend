@@ -2,9 +2,9 @@ require('dotenv').config();
 
 const jwt = require('jsonwebtoken');
 
-const {getRooms, createRoom} = require('../../backend/services/rooms');
-const {getUsers, disconnectUser, joinRoom} = require('../../backend/services/users');
-const {getMessages, newMessage} = require('../../backend/services/messages');
+const {getRooms, createRoom} = require('../services/rooms');
+const {getUsers, disconnectUser, joinRoom} = require('../services/users');
+const {getMessages, newMessage} = require('../services/messages');
 
 module.exports = async (io) => {
 
